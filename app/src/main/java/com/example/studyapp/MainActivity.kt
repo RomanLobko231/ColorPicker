@@ -6,9 +6,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -312,147 +321,6 @@ fun ColorBoxes(
             }
         }
     }
-    /*Column(
-        modifier = modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(5.dp)
-    ) {
-        val randomGenerator = Random(System.currentTimeMillis())
-        when(colorList.size){
-            1 -> Box(
-                modifier = modifier
-                    .fillMaxSize()
-                    .aspectRatio(1f)
-                    .padding(12.dp)
-                    .background(colorList[0], RoundedCornerShape(32.dp))
-
-            )
-            2, 3 -> Row {
-                repeat(colorList.size){
-                    Box(
-                        modifier = modifier
-                            .fillMaxSize()
-                            .aspectRatio(1f)
-                            .padding(12.dp)
-                            .weight(1f)
-                            .background(colorList[it], RoundedCornerShape(32.dp))
-                    )
-                }
-            }
-
-        }
-
-        if (boxQuantity == 1) {
-            Box(
-                modifier = modifier
-                    .fillMaxSize()
-                    .aspectRatio(1f)
-                    .padding(12.dp)
-                    .background(referenceColor, RoundedCornerShape(32.dp))
-
-            )
-        }
-        repeat(boxQuantity / 3) {
-
-            val redBox = Color(
-                (randomGenerator.nextInt(700, 950)) * 0.001f,
-                (randomGenerator.nextInt(300, 650)) * 0.001f,
-                (randomGenerator.nextInt(300, 650)) * 0.001f,
-                1f
-            )
-            val redValueRedBox = redBox.toArgb().red
-            val greenValueRedBox = redBox.toArgb().green
-            val blueValueRedBox = redBox.toArgb().blue
-            val rgbValueRedBox = "($redValueRedBox, $greenValueRedBox, $blueValueRedBox)"
-
-
-            val greenBox = Color(
-                (randomGenerator.nextInt(300, 650)) * 0.001f,
-                (randomGenerator.nextInt(700, 950)) * 0.001f,
-                (randomGenerator.nextInt(300, 650)) * 0.001f,
-                1f
-            )
-            val redValueGreenBox = greenBox.toArgb().red
-            val greenValueGreenBox = greenBox.toArgb().green
-            val blueValueGreenBox = greenBox.toArgb().blue
-            val rgbValueGreenBox = "($redValueGreenBox, $greenValueGreenBox, $blueValueGreenBox)"
-
-
-            val blueBox = Color(
-                (randomGenerator.nextInt(300, 650)) * 0.001f,
-                (randomGenerator.nextInt(300, 650)) * 0.001f,
-                (randomGenerator.nextInt(700, 950)) * 0.001f,
-                1f
-            )
-
-            val redValueBlueBox = blueBox.toArgb().red
-            val greenValueBlueBox = blueBox.toArgb().green
-            val blueValueBlueBox = blueBox.toArgb().blue
-            val rgbValueBlueBox = "($redValueBlueBox, $greenValueBlueBox, $blueValueBlueBox)"
-
-            Row(
-                modifier = modifier
-                    .fillMaxSize()
-            ) {
-                    Box(
-                        modifier = modifier
-                            .fillMaxSize()
-                            .aspectRatio(1f)
-                            .padding(12.dp)
-                            .background(
-                                blueBox, RoundedCornerShape(32.dp)
-                            )
-                            .clickable {
-                                sendColor(
-                                    listOf(
-                                        Integer
-                                            .toHexString(blueBox.toArgb())
-                                            .substring(2)
-                                            .uppercase(), rgbValueBlueBox
-                                    )
-                                )
-                            }
-                    )
-                    Box(
-                        modifier = modifier
-                            .fillMaxSize()
-                            .aspectRatio(1f)
-                            .padding(12.dp)
-                            .background(
-                                redBox, RoundedCornerShape(32.dp)
-                            )
-                            .clickable {
-                                sendColor(
-                                    listOf(
-                                        Integer
-                                            .toHexString(redBox.toArgb())
-                                            .substring(2)
-                                            .uppercase(), rgbValueRedBox
-                                    )
-                                )
-                            }
-                    )
-                    Box(
-                        modifier = modifier
-                            .fillMaxSize()
-                            .aspectRatio(1f)
-                            .padding(12.dp)
-                            .background(
-                                greenBox, RoundedCornerShape(32.dp)
-                            )
-                            .clickable {
-                                sendColor(
-                                    listOf(
-                                        Integer
-                                            .toHexString(greenBox.toArgb())
-                                            .substring(2)
-                                            .uppercase(), rgbValueGreenBox
-                                    )
-                                )
-                            }
-                    )
-                }
-            }
-        }*/
 }
 
 private fun getRandomColor(seed: Int): Color {
